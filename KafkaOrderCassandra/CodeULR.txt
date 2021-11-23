@@ -1,0 +1,1 @@
+https://github.com/DataStax-Examples/spring-k8s-cassandra-microservices

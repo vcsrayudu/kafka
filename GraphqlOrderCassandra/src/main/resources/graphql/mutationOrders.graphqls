@@ -1,0 +1,24 @@
+schema{
+ mutation: Mutation
+}
+
+
+input Product{
+ productId: String!,
+  productName: String,
+  productQuantity: String,
+  productPrice: String
+ 
+}
+input Order{
+  orderId: String!,
+  productList: [Product],
+  orderDescription: String,
+  orderCreationTimestamp: String
+}
+
+
+
+ extend type Mutation {
+    createOrder(order: Order): Order
+}

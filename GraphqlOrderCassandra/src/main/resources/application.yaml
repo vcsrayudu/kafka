@@ -1,0 +1,33 @@
+server.port: 9081
+
+management.server.port: 9082
+
+spring.data.rest.basePath: /api
+spring.data.cassandra.keyspace-name: graphql
+
+spring:
+    kafka:
+      producer:
+       bootstrap-servers: localhost:9092
+       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+       alue-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+---
+spring:
+  data:
+    cassandra:
+      port: 9042
+      contact-points: 10.194.39.37
+      schema-action: create-if-not-exists
+      local-datacenter: datacenter1
+---
+spring.profiles: kubernetes
+
+springfox:
+  documentation:
+    auto-startup: false
+management.endpoint.restart.enabled: true
+
+
+graphql.tools.schema-location-pattern: '*.graphqls'
+graphql.servlet.enabled: true
+graphql.servlet.corsEnabled: true

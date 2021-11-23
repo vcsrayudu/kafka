@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: kafka-customer-cassandra
+  profiles:
+    active: production
+ 

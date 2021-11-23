@@ -1,0 +1,20 @@
+server.port: 9081
+
+management.server.port: 9082
+
+spring.data.rest.basePath: /api
+spring.data.cassandra.keyspace-name: subbu
+
+---
+spring:
+  data:
+    cassandra:
+      port: 9042
+      contact-points: 10.194.39.37
+      schema-action: create-if-not-exists
+      local-datacenter: datacenter1
+---
+spring.profiles: kubernetes
+
+management.endpoint.restart.enabled: true
+     

@@ -1,0 +1,27 @@
+info:
+  component: Kafka Consumer Processor
+server:
+  port: ${PORT:9085}
+spring.cloud.stream:
+  function:
+    defination: consumerProcessor
+  bindings:
+    consumerProcessor-in-0:
+      destination: order
+    consumerProcessor-out-0:
+      destination: vendor
+  kafka:
+    bindings:
+      consumerProcessor-in-0:
+        consumer:
+          configuration:
+            value:
+              deserializer:  org.springframework.kafka.support.serializer.JsonDesrializer
+      consumerProcessor-out-0:
+        producer:
+          configuration:
+            value:
+              deserializer:  org.springframework.kafka.support.serializer.JsonDesrializer
+      binder:
+        brokers:
+          - localhost:9092

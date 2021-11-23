@@ -1,0 +1,43 @@
+schema{
+ query: Query
+ mutation: Mutation
+}
+type Query{
+  allOrders: [Order],
+  order(orderId: String): Order
+}
+type Product{
+ productId: String!,
+  productName: String,
+  productQuantity: Int,
+  productPrice: Float
+ 
+}
+
+type Order{
+  orderId: String!,
+  productList: [Product],
+  orderDescription: String,
+  orderCreationTimestamp: String
+}
+input InputProduct{
+ productId: String!,
+  productName: String,
+  productQuantity: Int,
+  productPrice: Float
+ 
+}
+
+input InputOrder{
+  orderId: String!,
+  productList: [InputProduct],
+  orderDescription: String,
+  orderCreationTimestamp: String
+}
+
+type Mutation {
+    createOrder(order: InputOrder): Order
+}
+
+
+

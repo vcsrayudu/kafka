@@ -1,0 +1,20 @@
+{
+  "namespace": "com.ot.micropay.order.model",
+  "type": "record",
+  "name": "OrderStatus",
+  "fields": [
+    {
+      "name": "OrderId",
+      "type": "string"
+    },
+    {
+      "name": "customerId",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    }
+    
+  ]
+}

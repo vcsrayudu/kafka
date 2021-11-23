@@ -1,0 +1,21 @@
+{
+"namespace": "com.chase.kafka.producer.model",
+"name": "Account",
+"type":"record",
+"fields":[
+{
+"name": "userName",
+"type": "string"
+},
+{
+"name": "accountNumber",
+"type": "string"
+},
+{
+"name": "address",
+"type": "string"
+}
+
+
+]
+}
